@@ -5,13 +5,14 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Particles from 'react-tsparticles';
+import { Engine } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
-import { distance } from 'framer-motion';
 
 const App: React.FC = () => {
-  const particlesInit = async (main: any) => {
+  const particlesInit = async (main: Engine): Promise<void> => {
     await loadFull(main);
   };
+
   return (
     <div className="app">
       <Particles
@@ -19,6 +20,11 @@ const App: React.FC = () => {
       init={particlesInit}
       options={{
         background: {
+          color: {
+            value: "#121212",
+          },
+        },
+        particles: {
           number: {
             value: 50,
           },
