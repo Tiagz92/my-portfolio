@@ -1,3 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'inter', sans-serif;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(25, 25, 25, 0.9)), url("src/assets/images/background.webp") no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+  animation: backgroundanimation 20s infinite alternate;
+}
+
+@keyframes backgroundanimation {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.1);
+  }
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -116,7 +135,6 @@
   display: block;
   font-weight: bold;
 }
-/* Animation hover sur les boutons */
 button {
   transition: all 0.3s ease;
 }
@@ -127,7 +145,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Animation hover sur les liens */
 a {
   transition: all 0.3s ease;
 }
@@ -137,7 +154,6 @@ a:hover {
   text-decoration: underline;
   transform: scale(1.05);
 }
-/* src/index.css */
 .about {
   padding: 50px 20px;
   background-color: #121212;
