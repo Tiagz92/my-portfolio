@@ -1,11 +1,11 @@
-import React from 'react';
+import type React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Hero: React.FC = () => {
-	  const { ref, inView } = useInView({
-	triggerOnce: true,
-	threshold: 0.1,
+	  useInView({
+    triggerOnce: true,
+    threshold: 0.1,
   });
 
   return (

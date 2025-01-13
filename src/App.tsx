@@ -1,11 +1,11 @@
-import React from 'react';
+import type React from 'react';
 import Hero from './Hero';
 import Projects from './components/Projects';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Particles from 'react-tsparticles';
-import { Engine } from 'tsparticles-engine';
+import type { Engine } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 
 const App: React.FC = () => {

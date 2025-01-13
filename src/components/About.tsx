@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { motion } from 'framer-motion';
 import CV from '../assets/images/Cv alternance.pdf'; // Import direct du fichier PDF
 
