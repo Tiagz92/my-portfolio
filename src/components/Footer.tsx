@@ -1,17 +1,19 @@
-import React from 'react';
+import { motion } from "framer-motion";
 
-const Footer: React.FC = () => {
-  return (
-    <footer className="footer">
-      <p>Built by Tiago with Love ❤️</p>
-      <a href="https://www.linkedin.com/in/tiago-de-almeida-1bb12a233" target="_blank" rel="noopener noreferrer">
-        LinkedIn
-      </a>
-      <a href="https://github.com/Tiagz92" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    </footer>
-  );
+type FooterProps = object;
+
+const Footer: React.FC<FooterProps> = () => {
+	return (
+		<footer className="footer">
+			<motion.p
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}
+			>
+				Built by Tiago with Love ❤️
+			</motion.p>
+		</footer>
+	);
 };
 
 export default Footer;
