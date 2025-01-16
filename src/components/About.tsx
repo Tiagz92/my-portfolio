@@ -1,14 +1,12 @@
 import { motion, Variants } from "framer-motion";
 import CV from "../assets/images/Cv alternance.pdf"; // Import direct du fichier PDF
 
-interface AboutProps {}
-
 const aboutVariants: Variants = {
 	initial: { opacity: 0, y: 50 },
 	animate: { opacity: 1, y: 0 },
 };
 
-const About: React.FC<AboutProps> = () => {
+const About = (): JSX.Element => {
 	return (
 		<motion.section
 			className="about"
@@ -28,10 +26,16 @@ const About: React.FC<AboutProps> = () => {
 				knowledge. It's never too late...
 			</p>
 			<a
-				href={CV}
+				href={CV || "#"}
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Download my CV in PDF format"
+				onClick={(e) => {
+					if (!CV) {
+						e.preventDefault();
+						alert("Sorry, the CV is currently unavailable.");
+					}
+				}}
 			>
 				Download my CV
 			</a>
