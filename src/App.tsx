@@ -1,4 +1,5 @@
 import "./App.css";
+import "./index.css";
 import Hero from "./Hero";
 import Projects from "./components/Projects";
 import About from "./components/About";

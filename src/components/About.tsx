@@ -18,12 +18,11 @@ const About = (): JSX.Element => {
 			<h2>About Me</h2>
 			<p>
 				For over ten years, I worked as a social coordinator and later as a
-				coordination manager, serving elderly and disabled people. Now,
-				approaching the age of 40 and driven by my passion for new technologies,
-				I decided to take a leap and, in September 2024, I completed a Full
-				Stack web development bootcamp at Wild Code School. I am currently
-				looking for a 15-month apprenticeship in Toulouse to solidify my
-				knowledge. It's never too late...
+				coordination manager, serving elderly and disabled people. Driven by my
+				passion for new technologies, I decided to take a leap and, in September
+				2024, I completed a Full Stack web development bootcamp at Wild Code
+				School. I am currently looking for a 15-month apprenticeship in Toulouse
+				to solidify my knowledge. It's never too late...
 			</p>
 			<a
 				href={CV || "#"}
