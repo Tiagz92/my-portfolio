@@ -6,7 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-const App: React.FC = () => {
+function App() {
 	return (
 		<div
 			className="app"
@@ -20,6 +20,6 @@ const App: React.FC = () => {
 			<Footer />
 		</div>
 	);
-};
+}
 
 export default App;

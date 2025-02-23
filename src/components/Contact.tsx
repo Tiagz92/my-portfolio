@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 type ContactProps = {};
 
@@ -44,6 +45,7 @@ const Contact: React.FC<ContactProps> = () => {
 					rel="noopener noreferrer"
 					aria-label="Visit my LinkedIn profile"
 				>
+					<FaLinkedin size={20} />
 					LinkedIn
 				</motion.a>
 				<motion.a
@@ -54,6 +56,7 @@ const Contact: React.FC<ContactProps> = () => {
 					rel="noopener noreferrer"
 					aria-label="Visit my GitHub profile"
 				>
+					<FaGithub size={20} />
 					GitHub
 				</motion.a>
 			</div>

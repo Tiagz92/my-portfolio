@@ -1,6 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import CV from "../assets/images/Cv alternance.pdf"; // Import direct du fichier PDF
 
+// Définition des variantes pour l'animation Framer Motion
 const aboutVariants: Variants = {
 	initial: { opacity: 0, y: 50 },
 	animate: { opacity: 1, y: 0 },
@@ -25,16 +26,10 @@ const About = (): JSX.Element => {
 				to solidify my knowledge. It's never too late...
 			</p>
 			<a
-				href={CV || "#"}
+				href={CV} // CV est toujours disponible suite à l'import
 				target="_blank"
 				rel="noopener noreferrer"
 				aria-label="Download my CV in PDF format"
-				onClick={(e) => {
-					if (!CV) {
-						e.preventDefault();
-						alert("Sorry, the CV is currently unavailable.");
-					}
-				}}
 			>
 				Download my CV
 			</a>

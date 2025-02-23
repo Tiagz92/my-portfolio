@@ -1,8 +1,7 @@
-import type React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const Hero: React.FC = () => {
+function Hero(): JSX.Element {
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 		threshold: 0.1,
@@ -20,7 +19,7 @@ const Hero: React.FC = () => {
 			<h1 id="hero-title">Hi, I’m Tiago Gonçalves De Almeida</h1>
 			<p>
 				For over ten years, I worked as a social coordinator and later as a
-				coordination manager, serving elderly and disabled people.Driven by my
+				coordination manager, serving elderly and disabled people. Driven by my
 				passion for new technologies, I decided to take a leap and, in September
 				2024, I completed a Full Stack web development bootcamp at Wild Code
 				School. I am currently looking for a 15-month apprenticeship in Toulouse
@@ -28,6 +27,6 @@ const Hero: React.FC = () => {
 			</p>
 		</motion.section>
 	);
-};
+}
 
 export default Hero;
