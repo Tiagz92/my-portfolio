@@ -3,7 +3,7 @@ import type { Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { projects } from "../data/Projects";
 
-const Projects: React.FC = () => {
+function Projects() {
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 		threshold: 0.1,
@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
 			ref={ref}
 			className="projects"
 			id="projects-section"
-			aria-label="This section showcases the projects I have worked on, including descriptions and links to view them."
+			aria-label="Cette section présente les projets sur lesquels j'ai travaillé, comprenant des descriptions et des liens pour les visualiser."
 			initial={{ opacity: 0, y: 50 }}
 			animate={inView ? { opacity: 1, y: 0 } : {}}
 			transition={{ duration: 0.8 }}
@@ -36,7 +36,8 @@ const Projects: React.FC = () => {
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.5, delay: index * 0.2 }}
-						whileHover={hoverAnimation.hover}
+						whileHover="hover"
+						variants={hoverAnimation}
 					>
 						<h3>{project.title}</h3>
 						<p>{project.description}</p>
@@ -44,7 +45,8 @@ const Projects: React.FC = () => {
 							href={project.link}
 							target="_blank"
 							rel="noopener noreferrer"
-							whileHover={hoverAnimation.hover}
+							whileHover="hover"
+							variants={hoverAnimation}
 						>
 							View Project
 						</motion.a>
@@ -53,6 +55,6 @@ const Projects: React.FC = () => {
 			</div>
 		</motion.section>
 	);
-};
+}
 
 export default Projects;

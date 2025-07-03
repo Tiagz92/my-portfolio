@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 
-type FooterProps = object;
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
 	return (
 		<footer className="footer">
 			<motion.p
