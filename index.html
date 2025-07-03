@@ -1,13 +1,43 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- L'icône du site. Vous pouvez la remplacer par votre propre logo SVG ou PNG -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    
+    <!-- Titre de la page, important pour le référencement (SEO) -->
+    <title>Mon Portfolio | [Votre Nom] - Développeur Web</title>
+    
+    <!-- Description de la page, également pour le SEO -->
+    <meta name="description" content="Portfolio de [Votre Nom], développeur web spécialisé en React, Node.js et TypeScript. Découvrez mes projets et compétences." />
+
+    <!-- Polices depuis Google Fonts pour un design plus soigné -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Inclusion de Tailwind CSS via CDN pour un prototypage rapide. Pour la production, il est préférable de l'installer via npm. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configuration de Tailwind CSS (optionnel, pour customiser)
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+
   </head>
   <body>
+    <!-- Le point d'entrée de votre application React -->
     <div id="root"></div>
+    
+    <!-- Le script principal de votre application. Assurez-vous que le chemin est correct. -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
