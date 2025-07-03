@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset global */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Animation de fond douce */
+@keyframes backgroundanimation {
+	0% {
+		filter: brightness(1);
+	}
+	100% {
+		filter: brightness(1.05);
+	}
+}
+
+body {
+	animation: backgroundanimation 20s infinite alternate;
+}
