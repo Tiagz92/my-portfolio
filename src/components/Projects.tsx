@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { projects } from "../data/Projects";
+import { projects } from "../data/projects";
 
 const Projects = () => {
 	const [ref, inView] = useInView({
