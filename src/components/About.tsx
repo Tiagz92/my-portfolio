@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CV from "../assets/images/CV alternance tiago.pdf";
+import CV from "../assets/images/CV alternance tiago.pdf"; // Adjust the path as necessary
 
 const aboutVariants = {
 	initial: { opacity: 0, y: 40 },
