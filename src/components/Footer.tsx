@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
 	return (
-		<footer className="py-8 text-center">
+		<footer lang='fr' className="py-8 text-center">
 			<motion.p
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}

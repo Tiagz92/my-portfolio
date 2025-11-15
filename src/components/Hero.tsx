@@ -109,11 +109,11 @@ const Hero = () => {
                     id="hero-title"
                     className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 max-w-4xl leading-tight"
                 >
-                    Full Stack Web Developer
+                    Développeur Web Full Stack
                 </h1>
 
                 <p className="text-lg sm:text-xl text-light-foreground/80 dark:text-dark-foreground/80 max-w-3xl mb-10">
-                    I build modern and responsive web applications. Let's bring your ideas to life.
+                    Je construis des applications web modernes et réactives. Donnons vie à vos idées.
                 </p>
 
                 <motion.a

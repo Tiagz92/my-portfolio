@@ -1,3 +1,4 @@
+
 export interface Project {
 	title: string;
 	description: string;
@@ -9,7 +10,7 @@ export const projects: Project[] = [
 	{
 		title: "GOAT",
 		description:
-			"GOAT is a platform for sharing knowledge via Google Meet. Choose a subject, select a GOAT's announcement, and pick a time slot. Enjoy the course and create your own announcement to share your knowledge.",
+			"GOAT est une plateforme de partage de connaissances via Google Meet. Choisissez un sujet, sélectionnez l'annonce d'un GOAT et choisissez un créneau horaire. Profitez du cours et créez votre propre annonce pour partager vos connaissances.",
 		link: "https://github.com/WildCodeSchool-2024-09/JS-Paris-P3-goat.git",
 		techStack: ["React", "Node.js", "Express", "MySQL"],
 	},
@@ -17,14 +18,14 @@ export const projects: Project[] = [
 	{
 		title: "The Plant Spot",
 		description:
-			"A site where you can find the perfect plant for your home with the help of filters like brightness, watering, etc...",
+			"Un site où vous pouvez trouver la plante parfaite pour votre maison à l'aide de filtres comme la luminosité, l'arrosage, etc...",
 		link: "https://github.com/WildCodeSchool-2024-09/JS-Paris-P2-ThePlantSpot",
 		techStack: ["React", "Node.js", "MongoDB"],
 	},
 	{
 		title: "DysWay",
 		description:
-			"A site that helps people to know more about dyslexia and shows a list of celebrities that have dyslexia.",
+			"Un site qui aide les gens à en savoir plus sur la dyslexie et présente une liste de célébrités dyslexiques.",
 		link: "https://tiagz92.github.io/wcs-project1/",
 		techStack: ["HTML", "CSS", "JavaScript"],
 	},
