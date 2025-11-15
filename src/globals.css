@@ -1,24 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Reset global */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+@layer base {
+  body {
+    @apply bg-light-background text-light-foreground;
+  }
+  
+  .dark body {
+    @apply bg-dark-background text-dark-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 { @apply text-5xl; }
+  h2 { @apply text-4xl; }
+  h3 { @apply text-3xl; }
+  
+  a {
+    @apply text-accent hover:text-accent-hover transition-colors;
+  }
 }
 
-/* Animation de fond douce */
-@keyframes backgroundanimation {
-	0% {
-		filter: brightness(1);
-	}
-	100% {
-		filter: brightness(1.05);
-	}
-}
+@layer components {
+  .card {
+    @apply bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border rounded-lg shadow-card;
+  }
 
-body {
-	animation: backgroundanimation 20s infinite alternate;
+  .btn-primary {
+    @apply bg-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-accent-hover transition-colors;
+  }
 }
