@@ -1,132 +1,53 @@
+
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { FiArrowDown } from 'react-icons/fi';
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import type { Container } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Hero = () => {
-	const [ref, inView] = useInView({
-		triggerOnce: true,
-		threshold: 0.1,
-	});
-    const [init, setInit] = useState(false);
+    const { t } = useTranslation();
 
-    useEffect(() => {
-      initParticlesEngine(async (engine) => {
-        await loadSlim(engine);
-      }).then(() => {
-        setInit(true);
-      });
-    }, []);
-
-    const particlesLoaded = async (_container?: Container) => {
-    };
-
-
-    const options = useMemo(
-        () => ({
-            background: {
-                color: {
-                    value: "transparent",
-                },
-            },
-            fpsLimit: 60,
-            interactivity: {
-                events: {
-                    onHover: {
-                        enable: true,
-                        mode: "repulse",
-                    },
-                },
-                modes: {
-                    repulse: {
-                        distance: 100,
-                        duration: 0.4,
-                    },
-                },
-            },
-            particles: {
-                color: {
-                    value: "#ffffff",
-                },
-                links: {
-                    color: "#ffffff",
-                    distance: 150,
-                    enable: true,
-                    opacity: 0.1,
-                    width: 1,
-                },
-                move: {
-                    direction: "none" as const,
-                    enable: true,
-                    outModes: {
-                        default: "bounce" as const,
-                    },
-                    random: false,
-                    speed: 1,
-                    straight: false,
-                },
-                number: {
-                    density: {
-                        enable: true,
-                    },
-                    value: 80,
-                },
-                opacity: {
-                    value: 0.1,
-                },
-                shape: {
-                    type: "circle" as const,
-                },
-                size: {
-                    value: { min: 1, max: 5 },
-                },
-            },
-            detectRetina: true,
-        }),
-        [],
-      );
-
-	return (
-        <div className="relative">
-            {init && <Particles
-                id="tsparticles"
-                particlesLoaded={particlesLoaded}
-                options={options}
-            />}
-            <motion.section
-                ref={ref}
-                initial={{ opacity: 0, y: 40 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 relative z-10"
-                aria-labelledby="hero-title"
+    return (
+        <div className="flex flex-col items-center justify-center text-center min-h-[calc(100vh-80px)]">
+            <motion.h1 
+                className="text-5xl md:text-7xl font-extrabold text-light-text dark:text-dark-text tracking-tighter mb-4"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
             >
-                <p className="text-2xl sm:text-3xl font-semibold mb-2">Tiago GONÇALVES DE ALMEIDA</p>
-                <h1
-                    id="hero-title"
-                    className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 max-w-4xl leading-tight"
-                >
-                    Développeur Web Full Stack
-                </h1>
-
-                <p className="text-lg sm:text-xl text-light-foreground/80 dark:text-dark-foreground/80 max-w-3xl mb-10">
-                    Je construis des applications web modernes et réactives. Donnons vie à vos idées.
-                </p>
-
-                <motion.a
-                    href="#projects"
-                    className="btn-primary py-3 px-8 text-lg font-semibold flex items-center gap-2"
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    Voir mes projets <FiArrowDown />
-                </motion.a>
-            </motion.section>
+                {t('hero.title')}
+            </motion.h1>
+            <motion.p 
+                className="max-w-2xl text-lg md:text-xl text-light-secondary dark:text-dark-secondary mb-8"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+            >
+                {t('hero.subtitle')}
+            </motion.p>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+            >
+                <a href="#projects" className="px-8 py-4 text-lg font-bold text-white bg-light-primary rounded-full dark:bg-dark-primary hover:bg-light-primary/90 dark:hover:bg-dark-primary/90 transition-all duration-300 shadow-lg">
+                    {t('hero.button')}
+                </a>
+            </motion.div>
+            <motion.div 
+              className="flex space-x-6 mt-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <a href="https://github.com/TiagoGDeAlmeida" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-light-primary dark:hover:text-dark-primary transition-colors duration-300">
+                <FaGithub size={28} />
+              </a>
+              <a href="https://www.linkedin.com/in/tiago-goncalves-de-almeida/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-light-primary dark:hover:text-dark-primary transition-colors duration-300">
+                <FaLinkedin size={28} />
+              </a>
+          </motion.div>
         </div>
-	);
+    );
 };
 
 export default Hero;

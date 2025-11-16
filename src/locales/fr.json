@@ -1,0 +1,58 @@
+
+{
+  "header": {
+    "name": "Tiago De Almeida"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Bonjour, je suis Tiago. Développeur Web.",
+    "subtitle": "Passionné par la création d'applications web modernes et performantes.",
+    "button": "Découvrir mes projets"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "paragraph1": "Je suis un développeur web passionné avec une solide expérience dans la création de sites web et d'applications. J'aime transformer des idées complexes en interfaces utilisateur simples et intuitives.",
+    "paragraph2": "Quand je ne code pas, j'aime explorer les nouvelles technologies, contribuer à des projets open source et apprendre de nouvelles choses."
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "goat_desc": "GOAT est une plateforme de partage de connaissances via Google Meet. Choisissez un sujet, sélectionnez l'annonce d'un GOAT et choisissez un créneau horaire. Profitez du cours et créez votre propre annonce pour partager vos connaissances.",
+    "the_plant_spot_desc": "Un site où vous pouvez trouver la plante parfaite pour votre maison à l'aide de filtres comme la luminosité, l'arrosage, etc...",
+    "dysway_desc": "Un site qui aide les gens à en savoir plus sur la dyslexie et présente une liste de célébrités dyslexiques."
+  },
+  "skills": {
+    "title": "Compétences"
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "paragraph": "Vous avez un projet en tête ou souhaitez simplement échanger ? N'hésitez pas à me contacter.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "text": "Tous droits réservés."
+  },
+  "index": {
+    "title": "Tiago Gonçalves De Almeida - Développeur Web",
+    "description": "Portfolio de Tiago GONÇALVES DE ALMEIDA, développeur web spécialisé en React, Node.js et TypeScript. Découvrez mes projets et compétences."
+  },
+  "app": {
+    "main_portfolio_aria_label": "Portfolio principal",
+    "loading": "Chargement..."
+  },
+  "main": {
+    "root_element_not_found": "L'élément #root est introuvable dans le DOM."
+  }
+}

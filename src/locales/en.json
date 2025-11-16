@@ -1,0 +1,58 @@
+
+{
+  "header": {
+    "name": "Tiago De Almeida"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hello, I'm Tiago. A Web Developer.",
+    "subtitle": "Passionate about creating modern and efficient web applications.",
+    "button": "Discover my projects"
+  },
+  "about": {
+    "title": "About Me",
+    "paragraph1": "I am a passionate web developer with a solid experience in creating websites and applications. I enjoy turning complex ideas into simple and intuitive user interfaces.",
+    "paragraph2": "When I'm not coding, I enjoy exploring new technologies, contributing to open source projects, and learning new things."
+  },
+  "projects": {
+    "title": "My Projects",
+    "goat_desc": "GOAT is a knowledge sharing platform via Google Meet. Choose a topic, select a GOAT's announcement and choose a time slot. Enjoy the course and create your own ad to share your knowledge.",
+    "the_plant_spot_desc": "A site where you can find the perfect plant for your home using filters like brightness, watering, etc...",
+    "dysway_desc": "A site that helps people learn about dyslexia and presents a list of dyslexic celebrities."
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "paragraph": "Have a project in mind or just want to chat? Feel free to contact me.",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "footer": {
+    "text": "All rights reserved."
+  },
+  "index": {
+    "title": "Tiago Gonçalves De Almeida - Web Developer",
+    "description": "Portfolio of Tiago GONÇALVES DE ALMEIDA, a web developer specializing in React, Node.js, and TypeScript. Discover my projects and skills."
+  },
+  "app": {
+    "main_portfolio_aria_label": "Main portfolio",
+    "loading": "Loading..."
+  },
+  "main": {
+    "root_element_not_found": "#root element not found in the DOM."
+  }
+}

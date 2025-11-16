@@ -8,7 +8,7 @@ interface ActiveSectionContextType {
 export const ActiveSectionContext = createContext<ActiveSectionContextType | null>(null);
 
 export const ActiveSectionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [activeSection, setActiveSection] = useState('Accueil');
+  const [activeSection, setActiveSection] = useState('home');
 
   return (
     <ActiveSectionContext.Provider value={{ activeSection, setActiveSection }}>

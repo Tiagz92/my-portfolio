@@ -1,25 +1,17 @@
-import React, { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { useActiveSection } from '../context/ActiveSectionContext';
 
-interface Props {
-  children: React.ReactNode;
-  sectionName: string;
-}
-
-const TrackedSection: React.FC<Props> = ({ children, sectionName }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.4, 
-    triggerOnce: false,
-  });
-
-  const { setActiveSection, activeSection } = useActiveSection();
+const TrackedSection = ({ children, sectionName }: { children: React.ReactNode, sectionName: string }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.5 });
+  const { setActiveSection } = useActiveSection();
 
   useEffect(() => {
-    if (inView && activeSection !== sectionName) {
+    if (isInView) {
       setActiveSection(sectionName);
     }
-  }, [inView, sectionName, setActiveSection, activeSection]);
+  }, [isInView, setActiveSection, sectionName]);
 
   return <div ref={ref}>{children}</div>;
 };

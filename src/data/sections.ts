@@ -1,59 +1,50 @@
+
 import { lazy } from 'react';
 
 const Hero = lazy(() => import('../components/Hero'));
-const Projects = lazy(() => import('../components/Projects'));
 const About = lazy(() => import('../components/About'));
+const Projects = lazy(() => import('../components/Projects'));
 const Skills = lazy(() => import('../components/Skills'));
 const Contact = lazy(() => import('../components/Contact'));
 
-interface SectionData {
-  name: string;
-  id: string;
-  component: React.LazyExoticComponent<() => JSX.Element>;
-  containerClassName?: string;
-  titleClassName?: string;
-  contentContainerClassName?: string;
-  isBgAlternate?: boolean;
-}
-
-export const sections: SectionData[] = [
+export const sections = [
   {
-    name: 'Accueil',
-    id: 'hero',
+    id: 'home',
     component: Hero,
+    containerClassName: 'pt-16 sm:pt-24',
+    contentContainerClassName: 'container mx-auto px-4 sm:px-6 lg:px-8',
+    isBgAlternate: false
   },
   {
-    name: 'Projets',
-    id: 'projects',
-    component: Projects,
-    containerClassName: 'py-20 px-6',
-    contentContainerClassName: 'max-w-6xl mx-auto',
-    titleClassName: 'text-4xl font-bold mb-10 text-center',
-  },
-  {
-    name: 'À propos',
     id: 'about',
     component: About,
-    containerClassName: 'py-20 px-6',
-    contentContainerClassName: 'max-w-4xl mx-auto',
-    titleClassName: 'text-4xl font-bold mb-10 text-center',
+    containerClassName: 'py-16 sm:py-24',
+    contentContainerClassName: 'container mx-auto px-4 sm:px-6 lg:px-8',
     isBgAlternate: true,
+    titleClassName: 'text-3xl sm:text-4xl font-bold mb-12 text-center'
   },
   {
-    name: 'Compétences',
+    id: 'projects',
+    component: Projects,
+    containerClassName: 'py-16 sm:py-24',
+    contentContainerClassName: 'container mx-auto px-4 sm:px-6 lg:px-8',
+    isBgAlternate: false,
+    titleClassName: 'text-3xl sm:text-4xl font-bold mb-12 text-center'
+  },
+  {
     id: 'skills',
     component: Skills,
-    containerClassName: 'py-20 px-6',
-    contentContainerClassName: 'container mx-auto',
-    titleClassName: 'text-3xl font-bold text-center mb-12',
+    containerClassName: 'py-16 sm:py-24',
+    contentContainerClassName: 'container mx-auto px-4 sm:px-6 lg:px-8',
+    isBgAlternate: true,
+    titleClassName: 'text-3xl sm:text-4xl font-bold mb-12 text-center'
   },
   {
-    name: 'Contact',
     id: 'contact',
     component: Contact,
-    containerClassName: 'py-20 px-6',
-    contentContainerClassName: 'max-w-2xl mx-auto',
-    titleClassName: 'text-4xl font-bold mb-10 text-center',
-    isBgAlternate: true,
-  },
+    containerClassName: 'py-16 sm:py-24',
+    contentContainerClassName: 'container mx-auto px-4 sm:px-6 lg:px-8',
+    isBgAlternate: false,
+    titleClassName: 'text-3xl sm:text-4xl font-bold mb-12 text-center'
+  }
 ];
