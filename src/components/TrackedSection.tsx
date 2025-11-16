@@ -1,23 +1,25 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useActiveSection } from '../context/ActiveSectionContext';
 
 interface Props {
   children: React.ReactNode;
   sectionName: string;
-  onSectionVisible: (sectionName: string) => void;
 }
 
-const TrackedSection: React.FC<Props> = ({ children, sectionName, onSectionVisible }) => {
+const TrackedSection: React.FC<Props> = ({ children, sectionName }) => {
   const { ref, inView } = useInView({
-    threshold: 0.4, // La section est considérée comme visible lorsque 40% de celle-ci est à l'écran
-    triggerOnce: false, // Permet de suivre le défilement vers le haut et vers le bas
+    threshold: 0.4, 
+    triggerOnce: false,
   });
 
+  const { setActiveSection, activeSection } = useActiveSection();
+
   useEffect(() => {
-    if (inView) {
-      onSectionVisible(sectionName);
+    if (inView && activeSection !== sectionName) {
+      setActiveSection(sectionName);
     }
-  }, [inView, sectionName, onSectionVisible]);
+  }, [inView, sectionName, setActiveSection, activeSection]);
 
   return <div ref={ref}>{children}</div>;
 };

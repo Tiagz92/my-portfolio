@@ -1,52 +1,29 @@
 import { useState, useEffect } from 'react';
-import { FiSun, FiMoon } from 'react-icons/fi';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import NavBar from './NavBar';
+import { useActiveSection } from '../context/ActiveSectionContext';
 
 const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const { activeSection } = useActiveSection(); // On récupère la section active depuis le contexte
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const isDark = localStorage.getItem('isDarkMode') === 'true';
-    setIsDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsSticky(window.scrollY > 0);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newIsDarkMode = !isDarkMode;
-    setIsDarkMode(newIsDarkMode);
-    localStorage.setItem('isDarkMode', newIsDarkMode.toString());
-    if (newIsDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 0);
+  });
 
   return (
-    <header className={`py-4 px-6 z-50 transition-shadow ${isSticky ? 'sticky top-0 shadow-md bg-light-background/80 dark:bg-dark-background/80 backdrop-blur-lg' : ''}`}>
-      <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-accent">Mon Portfolio</a>
-        <nav className="hidden md:flex items-center space-x-6">
-          <a href="#projects" className="hover:text-accent transition-colors">Projets</a>
-          <a href="#skills" className="hover:text-accent transition-colors">Compétences</a>
-          <a href="#about" className="hover:text-accent transition-colors">À propos</a>
-          <a href="#contact" className="hover:text-accent transition-colors">Contact</a>
-        </nav>
-        <button onClick={toggleDarkMode} className="p-2 rounded-full hover:bg-light-border dark:hover:bg-dark-border transition-colors">
-          {isDarkMode ? <FiSun /> : <FiMoon />}
-        </button>
+    <motion.header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-light-background/80 dark:bg-dark-background/80 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}
+      aria-label="En-tête de la page"
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <div className="flex items-center">
+          <a href="#accueil" className="text-xl font-bold text-light-text dark:text-dark-text">Tiago De Almeida</a>
+        </div>
+        <NavBar activeSection={activeSection} />
       </div>
-    </header>
+    </motion.header>
   );
 };
 
